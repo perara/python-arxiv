@@ -52,7 +52,7 @@ class Paper:
             'category': self.category
         })
 
-    def _get_id(self):
+    def get_id(self):
         return self.page_url.split("/")[-1]
 
     def download(self, dirname='./', prepend_id=False, short_name=False):
@@ -61,7 +61,7 @@ class Paper:
             return False
 
         filename = Paper._get_filename(self.title) if short_name else self.title
-        filename = filename + self._get_id() if prepend_id else filename
+        filename = filename + self.get_id() if prepend_id else filename
         filename = dirname + filename + ".pdf"
         urlretrieve(self.pdf_url, filename)
 

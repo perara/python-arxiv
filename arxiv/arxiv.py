@@ -42,7 +42,6 @@ class Arxiv:
                                 "sortBy": sort_by,
                                 "sortOrder": sort_order})
 
-        print(url_params)
         results = feedparser.parse(Arxiv.api + 'query?' + url_params)
         status_code = results.get('status')
 
