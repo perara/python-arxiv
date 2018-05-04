@@ -1,1 +1,1 @@
-from arxivpy.arxiv.arxiv import *
+from .arxiv import *
